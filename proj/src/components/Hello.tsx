@@ -2,13 +2,11 @@ import * as React from 'react';
 
 import { DefaultState } from '../classes/DefaultState';
 import { Programmer } from '../classes/Programmer';
-import { Boulevardier } from '../classes/Boulevardier';
-import { Margarita } from '../classes/Margarita';
 
 import { HelloProps } from '../interfaces/HelloProps';
 import { Drank } from '../interfaces/Drank';
 
-const drankOptions = new Array<Drank>(new Boulevardier(), new Margarita);
+import DrankOptions from '../static/DrankOptions';
 
 export class Hello extends React.Component<HelloProps, DefaultState> {
     programmer: Programmer;
@@ -23,14 +21,14 @@ export class Hello extends React.Component<HelloProps, DefaultState> {
 
     handleDrankClick = (e: any) => {
         console.log(this);
-        var currentDrank = drankOptions.find((drank: Drank) => {
+        var currentDrank = DrankOptions.find((drank: Drank) => {
             return drank.name === e.target.innerText;
         })
         this.setState({currentDrank: currentDrank});
     }
 
     render() {
-        let options = drankOptions.map((drank: Drank, index: number) => {
+        let options = DrankOptions.map((drank: Drank, index: number) => {
             return <li onClick={this.handleDrankClick}>{drank.name}</li>;
         })
 
