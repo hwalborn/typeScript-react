@@ -1,0 +1,1 @@
+export default new Array<string>('bourbon', 'campari', 'lime', 'red vermouth', 'salt', 'tequila', 'triple sec')

@@ -1,11 +1,15 @@
 import * as React from 'react';
+import { DndProvider } from 'react-dnd'
+import Backend from 'react-dnd-html5-backend'
 
 import { DefaultState } from '../classes/DefaultState';
 
 import { Drank } from '../interfaces/Drank';
 
 import DrankOptions from '../static/DrankOptions';
+
 import { DrankComponent } from './Drank';
+import IngredientBox from './IngredientBox';
 
 export class Hello extends React.Component<{}, DefaultState> {
     constructor(props:  Readonly<{}>) {
@@ -37,6 +41,9 @@ export class Hello extends React.Component<{}, DefaultState> {
                 <p>
                     {currentDrankIngredients}
                 </p>
+                <DndProvider backend={Backend}>
+                    <IngredientBox />
+                </DndProvider>
             </div>
         )
     }
