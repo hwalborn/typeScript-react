@@ -1,5 +1,3 @@
-import { Boulevardier } from './Boulevardier';
-
 import { Drank } from '../interfaces/Drank';
 
 export class DefaultState {
@@ -7,7 +5,4 @@ export class DefaultState {
         this.currentDrank = currentDrank;
     }
     currentDrank: Drank;
-    get drankOptions() : Array<Drank> {
-        return new Array(new Boulevardier());
-    };
 }
