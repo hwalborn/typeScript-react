@@ -1,3 +1,5 @@
+var path = require('path');
+
 module.exports = {
     mode: "development",
     devtool: "source-map",
@@ -22,6 +24,10 @@ module.exports = {
                 loader: "source-map-loader"
             }
         ]
+    },
+    devServer: {
+        contentBase: path.join(__dirname, 'dist'),
+        compress: true
     },
 
     // When importing a module whose path matches one of the following, just
